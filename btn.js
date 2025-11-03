@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const isAndroid = ua.includes("android");
 
     if (isAndroid) {
-        const btn = document.createElement("a");
+        const scriptTag = document.currentScript;
 
+        const btn = document.createElement("a");
         btn.href = "https://3pattipaks.com/";
         btn.target = "_blank";
         btn.rel = "nofollow noopener";
@@ -22,9 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.style.margin = "10px auto";
         btn.style.textAlign = "center";
 
-        const box = document.getElementById("patti-btn-box");
-        if (box) {
-            box.appendChild(btn); // ✅ button will show exactly where placeholder is
-        }
+        // ✅ Insert button exactly where script is placed
+        scriptTag.insertAdjacentElement("beforebegin", btn);
     }
 });
