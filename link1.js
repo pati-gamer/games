@@ -1,13 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-    if (navigator.userAgent.includes("Android")) {
-        const btn = document.createElement("a");
+    const ua = navigator.userAgent.toLowerCase();
 
+    if (ua.includes("android")) {
+        const btn = document.createElement("a");
         btn.href = "https://3pattipaks.com/";
         btn.target = "_blank";
         btn.rel = "nofollow noopener";
         btn.textContent = "Check All 3 Patti Pakistani Games";
 
-        btn.style.display = "inline-block";
+        btn.style.display = "block";
         btn.style.background = "#ff0000";
         btn.style.color = "#fff";
         btn.style.fontWeight = "bold";
@@ -16,8 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.style.textDecoration = "none";
         btn.style.fontSize = "16px";
         btn.style.margin = "10px auto";
+        btn.style.maxWidth = "300px";
         btn.style.textAlign = "center";
 
         document.body.appendChild(btn);
     }
 });
+
